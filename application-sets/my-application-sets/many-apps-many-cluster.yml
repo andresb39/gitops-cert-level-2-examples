@@ -25,7 +25,7 @@ spec:
         path: '{{path}}'
       destination:
         server: '{{server}}'
-        namespace: default
+        namespace: '{{path.basename}}'
             # Sync policy
       syncPolicy:
         syncOptions:
