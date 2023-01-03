@@ -14,11 +14,7 @@ spec:
               directories:
                 - path: application-sets/example-apps/*
           # cluster generator, 'child' #2
-          - clusters:
-              selector:
-                matchLabels:
-                  argocd.argoproj.io/secret-type: cluster
-  template:
+          - clusters: {}
     metadata:
       name: '{{path.basename}}-{{name}}'
     spec:
@@ -29,7 +25,7 @@ spec:
         path: '{{path}}'
       destination:
         server: '{{server}}'
-        namespace: '{{path.basename}}'
+        namespace: default
             # Sync policy
       syncPolicy:
         syncOptions:
