@@ -15,6 +15,7 @@ spec:
                 - path: application-sets/example-apps/*
           # cluster generator, 'child' #2
           - clusters: {}
+  template:
     metadata:
       name: '{{path.basename}}-{{name}}'
     spec:
@@ -26,7 +27,6 @@ spec:
       destination:
         server: '{{server}}'
         namespace: '{{path.basename}}'
-            # Sync policy
       syncPolicy:
         syncOptions:
           - CreateNamespace=true  
